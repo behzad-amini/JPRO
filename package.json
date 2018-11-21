@@ -1,0 +1,24 @@
+{
+  "name": "jpro",
+  "version": "0.1.0",
+  "description": "job processing in the warehouse",
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/behzad-amini/JPRO.git"
+  },
+  "author": "Behzad Amini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/behzad-amini/JPRO/issues"
+  },
+  "homepage": "https://github.com/behzad-amini/JPRO#readme"
+}
