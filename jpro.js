@@ -5,11 +5,12 @@ var express                 = require('express'),
     expressSanitizer        = require("express-sanitizer"),
     User                    = require('./models/user'),
     LocalStrategy           = require('passport-local'),
+    request                 = require('request'),
     passportLocalMongoose   = require('passport-local-mongoose');
     
 mongoose.connect('mongodb://localhost/job_mngt_app');
 
-var app=express();
+var app = express();
 
 app.use(require('express-session')({
     secret: 'smile buddy',
@@ -22,6 +23,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
+app.use(express.static(__dirname+"/public"));
 
 
 
@@ -101,6 +103,30 @@ function isLoggedIn(req,res,next){
     res.render('login');
 }
 
+
+//APIs
+//=============
+app.get('/requests/',function(req, res) {
+    console.log(req.query.jobId);
+    console.log('http://oms.mivecity.org/PnPController/?jobId='+req.query.jobId);
+   request('http://oms.mivecity.org/PnPController/?jobId='+req.query.jobId, {
+             'auth': {
+                        'user': 'jobadmin',
+                        'pass': 'mivecity@2001',
+                        'sendImmediately': false
+                    }
+            }, function(error, response, body){
+      if(error){
+          console.log(error);
+      } else {
+          if(response.statusCode == 200 ){
+              res.send(body);
+          }
+      }
+   });
+   
+   
+});
 
 
 

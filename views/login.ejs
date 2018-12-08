@@ -1,14 +1,62 @@
 <% include partials/header%>
 <% include partials/navigation%>
 
-<form action="/login" method="POST">
-    <label for="userName">User Name</label>
+<div class = "container " >
+	<div class="jumbotron text-success">
+		<div class = "container ml-auto">
+			<h1 id="pageTitle" >میوه سیتی</h1>
+			<h4>انبار مرکزی</h4>
+			<div>OMS/picking-packing</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+    <div class="card-deck">
+        <div class="card col-sm-3 col-md-3 col-lg-3" >
+            <img class="card-img-top" src="https://image.shutterstock.com/image-photo/isolated-shot-young-handsome-male-260nw-762790210.jpg" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">محمد صفدری</h4>
+                <p class="card-text">یک جمله از محمد</p>
+                <a href="#" class="btn btn-success">ورود به سیستم</a>
+                <div id="pp">
+                    <label for="userName" id="p1">شماره رمز: </label></label>
+                    <input type="password" id="p1" name=password>
+                </div>
+            </div>
+        </div>
+        <div class="card col-sm-3 col-md-3 col-lg-3" >
+            <img class="card-img-top" src="https://image.shutterstock.com/image-photo/handsome-unshaven-young-darkskinned-male-260nw-640011838.jpg" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">علیرضا زمانی</h4>
+                <p class="card-text">صداقت بیشه شیران است.</p>
+                <a href="#" class="btn btn-success">ورود به سیستم</a>
+            </div>
+        </div>
+        <div class="card col-sm-3 col-md-3 col-lg-3" >
+            <img class="card-img-top" src="https://image.shutterstock.com/image-photo/businessman-leaning-on-concrete-wall-260nw-1098946076.jpg" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">جمشید هاشم پور</h4>
+                <p class="card-text">الا یا ایها الساقی ...</p>
+                <a href="#" class="btn btn-success">ورود به سیستم</a>
+            </div>
+        </div>
+        <div class="card col-sm-3 col-md-3 col-lg-3" >
+            <img class="card-img-top" src="https://image.shutterstock.com/image-photo/handsome-smiling-young-man-studio-260nw-520889896.jpg" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title">نصرالله رادش</h4>
+                <p class="card-text" id="target">مرد روزهای سختی</p>
+                <a href="#" class="btn btn-success">ورود به سیستم</a>
+            </div>
+        </div>
+    </div>
+</div>   
+<form action="/stylesheets/login" method="POST">
+    <label for="userName" id="test1">User Name</label>
     <input type="text" name="username" placeholder="user name" id="userName">
     <label for="password">Password</label>
     <input type="password" name="password" placeholder="password" id="password">
-
     <button>Login</button>
-    
 </form>
+
 
 <% include partials/footer%>
